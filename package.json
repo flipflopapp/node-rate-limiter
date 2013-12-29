@@ -1,23 +1,26 @@
 {
-    "name": "ratelimiter",
-    "description": "A module to call any function in a rate limited manner",
-    "version": "0.0.1",
-    "author": "Naval Saini <flipflopapps@gmail.com>",
-    "dependencies": {
-        "events": "1.0.0"
-    },
-    "keywords": [
-        "rate-limit",
-        "nodejs"
-    ],
-    "main": "index.js",
-    "files": [ "README.txt" ],
-    "directories": [
-        "test"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/flipflopapp/node-rate-limiter.git"
-    },
-    "license" : "BSD-3-Clause"
+  "author": {
+    "name": "naval saini",
+    "email": "navalnovel@gmail.com"
+  },
+  "name": "ratelimiter",
+  "description": "A module to call any function in a rate limited manner",
+  "version": "0.0.1",
+  "repository": {
+    "url": "git://github.com/flipflopapp/node-rate-limiter.git"
+  },
+  "main": "./index.js",
+  "bin": {},
+  "dependencies": {
+    "events": "1.0.0"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "readme": "ERROR: No README.md file found!",
+  "readmeFilename": "README.md",
+  "_id": "ratelimiter@0.0.1",
+  "license": "BSD-3-Clause"
 }

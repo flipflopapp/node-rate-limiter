@@ -3,6 +3,8 @@ node-rate-limiter
 
 Rate limit any APIs/functions by using this rate limiter.
 
+This module has been used extensively in http://www.ecosystm.co .
+
 How to use
 ==========
 
@@ -51,3 +53,7 @@ How to use
        set, we try calling the function again for n times)
     4. scope = a scope for the callback [optional]
 
+Examples
+========
+
+Check under tests folder.

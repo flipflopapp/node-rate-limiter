@@ -3,7 +3,7 @@
     "name": "naval saini",
     "email": "navalnovel@gmail.com"
   },
-  "name": "ratelimiter",
+  "name": "ffratelimiter",
   "description": "A module to call any function in a rate limited manner",
   "version": "0.0.1",
   "repository": {
@@ -21,6 +21,6 @@
   },
   "readme": "ERROR: No README.md file found!",
   "readmeFilename": "README.md",
-  "_id": "ratelimiter@0.0.1",
+  "_id": "ffratelimiter@0.0.1",
   "license": "BSD-3-Clause"
 }

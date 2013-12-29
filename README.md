@@ -8,9 +8,13 @@ This module has been used extensively in http://www.ecosystm.co .
 How to use
 ==========
 
+1. Installation
+
+    $ npm install ffratelimiter
+
 1. Create an constructor.
 
-    var RateLimiter = require('./path-to-ratelimiter');
+    var RateLimiter = require('./node_modules/ffratelimiter');
 
 2. Create a rate limited queue with the above constructor.
 

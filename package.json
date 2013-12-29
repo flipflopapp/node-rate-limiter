@@ -1,5 +1,5 @@
 {
-    "name": "RateLimiter",
+    "name": "ratelimiter",
     "description": "A module to call any function in a rate limited manner",
     "version": "0.0.1",
     "author": "Naval Saini <flipflopapps@gmail.com>",

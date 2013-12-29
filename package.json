@@ -1,0 +1,21 @@
+{
+    "name": "RateLimiter",
+    "description": "A module to call any function in a rate limited manner",
+    "version": "0.0.1",
+    "author": "Naval Saini <flipflopapps@gmail.com>",
+    "dependencies": {
+        "events": "1.0.0"
+    },
+    "keywords": [
+        "rate-limiting",
+        "nodejs"
+    ],
+    "directories": [
+        "test"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/flipflopapp/node-rate-limiter.git"
+    },
+    "main": "index.js"
+}

@@ -22,5 +22,8 @@
   "readme": "ERROR: No README.md file found!",
   "readmeFilename": "README.md",
   "_id": "ffratelimiter@0.0.1",
-  "license": "BSD-3-Clause"
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "rate", "ratelimit", "limiter", "limit", "throttling"
+  ]
 }

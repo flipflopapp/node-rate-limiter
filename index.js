@@ -125,6 +125,7 @@ var RateLimiter = function(params) {
 
     this._callWrapper = function(fn, params, callback, scope, attempts) {
         var me = this;
+        params = params || [];
 
         // refresh apiCallTimes, remove old entries
         var oldest = 0;

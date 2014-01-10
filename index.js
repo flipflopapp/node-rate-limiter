@@ -88,18 +88,18 @@ var RateLimiter = function(params) {
         // processed. This is simply bad scheduling done to keep things simple.
 
         if (me.runforever && !a) { // reset to 0, if we reach the end of the queue
-            me.work_queue_idx = 0;
             a = me.work_queue[0];
+            me.work_queue_idx = 1;
         }
-
-        if (!me.runforever) { // free up memory, if we are not using runforever
-            me.work_queue[me.work_queue_idx] = null;
+        else if (!me.runforever) { // free up memory, if we are not using runforever
+            me.work_queue.slice(me.work_queue_idx, 1);
+        } else {
+            me.work_queue_idx++;
         }
-        me.work_queue_idx++;
 
         // call the rate-limited function
 
-        if (a) {
+        if (a && a.length > 0) {
             me._callWrapper.apply(me, a);
         }
     });

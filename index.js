@@ -131,6 +131,7 @@ var RateLimiter = function(params) {
 
     this._callWrapper = function(fn, params, callback, scope, attempts) {
         var me = this;
+        var _arguments = arguments;
         params = params || [];
 
         // refresh apiCallTimes, remove old entries
@@ -150,7 +151,7 @@ var RateLimiter = function(params) {
              ( me.window > 0 && me.apiCallTimes.length >= me.limit ) ) { // too many calls within a window
 
             //console.log ( "WAIT " + me.count + ", " + me.apiCallTimes.length );
-            me.work_queue.push (arguments);
+            me.work_queue.push (_arguments);
 
             // if we have made too many API calls
 
@@ -190,7 +191,7 @@ var RateLimiter = function(params) {
             if ( err ) {
                 if ( ++attempts < me.attempts ) {
                     //console.log ("TRY AGAIN");
-                    me.work_queue.push (arguments);
+                    me.work_queue.push (_arguments);
                     // not calling callback with an error - we will try again
                 } else {
                     //console.log ( "TOO MANY FAILS for " + params );

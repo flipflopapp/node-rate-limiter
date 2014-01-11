@@ -70,7 +70,8 @@ var RateLimiter = function(params) {
 
     // work queue - JSON parameters 
     me.work_queue = [];
-    me.work_queue_idx = 0;
+    if (me.runforever)
+        me.work_queue_idx = 0;
 
     // we need to store all times at which API calls 
     // were made
@@ -80,27 +81,32 @@ var RateLimiter = function(params) {
 
     me.events.on ('done', function() {
 
-        var a = me.work_queue[me.work_queue_idx];
-
         // NOTE: if there is a roll-over (in case of run forever), and
         // we reset the queue index back to 0, any new items inserted to 
         // work_queue would be delayed until all the older items are
         // processed. This is simply bad scheduling done to keep things simple.
 
-        if (me.runforever && !a) { // reset to 0, if we reach the end of the queue
-            a = me.work_queue[0];
-            me.work_queue_idx = 1;
-        }
-        else if (!me.runforever) { // free up memory, if we are not using runforever
-            me.work_queue.slice(me.work_queue_idx, 1);
+        var a = null;
+        if (me.runforever) {
+            a = me.work_queue[me.work_queue_idx++];
+            if(!a) {
+                // reset to 0, if we reach the end of the queue
+                a = me.work_queue[0];
+                me.work_queue_idx = 1;
+            }
         } else {
-            me.work_queue_idx++;
+            // free up memory, if we are not using runforever
+            a = me.work_queue[0];
+            me.work_queue = me.work_queue.slice(1);
         }
 
         // call the rate-limited function
 
         if (a && a.length > 0) {
             me._callWrapper.apply(me, a);
+        } else if (me.work_queue.length > 0) {
+            // double check - finishing the queue
+            me.events.emit('done');
         }
     });
 

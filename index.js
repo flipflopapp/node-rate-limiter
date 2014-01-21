@@ -205,13 +205,6 @@ var RateLimiter = function(params) {
 
         var args = params.concat( callbackWrapper );
         fn.apply(scope, args); // no scope information
-
-        // leave no chance of a circular reference
-        // NOTE: FunctionWrapper (here) ---> Function ---> Callback Wrapper
-
-        fn = null;
-        args = null;
-        callbackWrapper = null;
     };
 
 }).call (RateLimiter.prototype);

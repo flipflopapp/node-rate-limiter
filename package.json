@@ -6,7 +6,7 @@
   "name": "ffratelimiter",
   "description": "A module to call any function in a rate limited manner",
   "keywords": [ "rate", "ratelimit", "limiter", "limit", "throttling" ],
-  "version": "0.0.5",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "git://github.com/flipflopapp/node-rate-limiter.git"
@@ -23,6 +23,6 @@
   },
   "readme": "ERROR: No README.md file found!",
   "readmeFilename": "README.md",
-  "_id": "ffratelimiter@0.0.5",
+  "_id": "ffratelimiter@0.1.1",
   "license": "MIT"
 }

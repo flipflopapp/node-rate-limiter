@@ -18,13 +18,21 @@ How to use
 
 2. Create a rate limited queue with the above constructor.
 
+
     var params = {
+
         limit: NUMBER,          // default: 0
+
         window: NUMBER,         // default: 0
+
         concurrency: NUMBER,    // default: 1
+
         attempts: NUMBER,       // default: 1
+
         runforever: BOOLEAN     // default: false
+
     };
+
 
     var ratelimiter = new RateLimiter(params);
 

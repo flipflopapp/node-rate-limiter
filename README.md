@@ -10,31 +10,24 @@ How to use
 
 1. Installation
 
-    $ npm install ffratelimiter
+        npm install ffratelimiter
 
 1. Create an constructor.
 
-    var RateLimiter = require('./node_modules/ffratelimiter');
+        var RateLimiter = require('./node_modules/ffratelimiter');
 
 2. Create a rate limited queue with the above constructor.
 
 
-    var params = {
+        var params = {
+            limit: NUMBER,          // default: 0
+            window: NUMBER,         // default: 0
+            concurrency: NUMBER,    // default: 1
+            attempts: NUMBER,       // default: 1
+            runforever: BOOLEAN     // default: false
+        };
 
-        limit: NUMBER,          // default: 0
-
-        window: NUMBER,         // default: 0
-
-        concurrency: NUMBER,    // default: 1
-
-        attempts: NUMBER,       // default: 1
-
-        runforever: BOOLEAN     // default: false
-
-    };
-
-
-    var ratelimiter = new RateLimiter(params);
+        var ratelimiter = new RateLimiter(params);
 
 
     Here is a description of arguments of the constructor.
@@ -55,7 +48,7 @@ How to use
 
 3. Start inserting functions to be called into the queue, using the below function.
 
-    this.callWrapper (fn, params, callback, scope)
+        this.callWrapper (fn, params, callback, scope)
 
     1. fn = function to be called each time. It will be called with
        arguments in params, followed by an internal callback function
